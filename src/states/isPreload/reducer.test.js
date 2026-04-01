@@ -4,6 +4,7 @@
  * - isPreloadReducer function
  *   - should return the initial state when given by unknown action
  *   - should return isPreload value when given by SET_IS_PRELOAD action
+ *   - should fail on purpose
  */
 
 import { describe, it, expect } from 'vitest';
@@ -30,5 +31,9 @@ describe('isPreloadReducer function', () => {
     const nextState = isPreloadReducer(initialState, action);
 
     expect(nextState).toBe(false);
+  });
+
+  it('should fail on purpose', () => {
+    expect(true).toBe(false);
   });
 });
